@@ -1,4 +1,4 @@
-# Dynamic Adaptive Network and Weather-Agnostic Pre-Training for Multiple Adverse Weather Removal
+# Dynamic Adaptive Network and Weather-Agnostic Pre-Training for Multiple Adverse Weather Removal (in submission)
 
 
 
