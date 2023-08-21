@@ -2,7 +2,7 @@
 
 
 
-> **Abstract:** *Images captured under different weather conditions exhibit different degradation characteristics and patterns. However, existing all-in-one adverse weather removal methods aim to learn shared generic knowledge of multiple weather conditions via fixed network parameters, which fails to adjust for different instances to fit exclusive features characterization of specific weather conditions. To tackle this issue, we propose a novel dynamic weights generation network (DwGN) that can adaptively mine the instance-exclusive degradation features for different weather conditions via dynamically generated convolutional weights. Specifically, we first propose two fundamental dynamic weights convolutions, which can automatically generate optimal convolutional weights for distinct pending features via a lightweight yet efficient mapping layer. The predicted convolutional weights are then incorporated into the convolution operation to mine instance-exclusive features for different weather conditions. Building upon the dynamic weights convolutions, we further devise two core modules for network construction: half-dynamic multi-head cross-attention (HDMC) that performs exclusive-generic feature interaction, and half-dynamic feed-forward network (HDFN) that performs selected exclusive-generic feature transformation and aggregation. Considering communal feature representations shared between different weather conditions (e.g., background representation), both HDMC and HDFN strategically deploy only half of the dynamic weights convolutions for instance-exclusive feature mining while still deploying half of the static convolutions to mine generic features. Through adaptive weight tuning, our DwGN can adaptively adapt to different weather scenarios and effectively mine the instance-exclusive degradation features, thus enjoying better flexibility and adaptability under all-in-one adverse weather removal. Extensive experimental results demonstrate that our DwGN performs favorably against state-of-the-art algorithms.* 
+> **Abstract:** *Images captured under different weather conditions exhibit different degradation characteristics and patterns. However, existing all-in-one adverse weather removal methods mainly focus on learning shared generic knowledge of multiple weather conditions via fixed network parameters, which fails to adjust for different instances to fit exclusive features characterization of specific weather conditions. To tackle this issue, we propose a novel dynamic weights generation network (DwGN) that can adaptively mine and extract instance-exclusive degradation features for different weather conditions via dynamically generated convolutional weights. Specifically, we first propose two fundamental dynamic weights convolutions, which can automatically generate optimal convolutional weights for distinct pending features via a lightweight yet efficient mapping layer. The predicted convolutional weights are then incorporated into the convolution operation to mine and extract instance-exclusive features for different weather conditions. Building upon the dynamic weights convolutions, we further devise two core modules for network construction: half-dynamic multi-head cross-attention (HDMC) that performs exclusive-generic feature interaction, and half-dynamic feed-forward network (HDFN) that performs selected exclusive-generic feature transformation and aggregation. Considering communal features shared between different weather conditions (e.g., background representation), both HDMC and HDFN deploy only half of the dynamic weights convolutions for instance-exclusive feature mining, while still deploying half of the static convolutions to mine generic features. Through adaptive weight tuning, our DwGN can adaptively adapt to different weather scenarios and effectively mine the instance-exclusive degradation features, thus enjoying better flexibility and adaptability under all-in-one adverse weather removal. Extensive experimental results demonstrate that our DwGN performs favorably against state-of-the-art algorithms.* 
 
 ## Framework Architecture
 <table>
@@ -30,18 +30,6 @@ conda install pytorch=1.1 torchvision=0.3 cudatoolkit=9.0 -c pytorch
 pip install matplotlib scikit-image opencv-python timm einops ptflops PIL argparse
 ```
 
-## Pre-training
-- Download the [ImageNet](dataset/README.md) and run
-
-```
-cd dataset
-python prepare_imagenet.py
-```
--  Pre-train the model with default arguments by running
-
-```
-python pre-training.py
-```
 
 ## Training
 - Download the [dataset](dataset/README.md) and run
